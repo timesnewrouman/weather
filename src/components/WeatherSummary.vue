@@ -1,6 +1,25 @@
+<script setup>
+import {computed} from "vue";
+
+const props = defineProps({
+  weatherInfo: {
+    type: [Object, null],
+    default: null,
+    required: true
+  }
+})
+
+const xxx = computed(() => {
+  // return props.weatherInfo?.weather[0].description
+  return 'url(' + `'/src/assets/img/weather-main/` + `${props.weatherInfo?.weather[0].description}.png'` + ')'
+});
+
+</script>
+
 <template>
-  <div class="summary">
+  <div v-if="weatherInfo?.weather" class="summary">
     <div
+      :style="{backgroundImage: xxx}"
       class="pic-main"
     ></div>
     <div class="weather">
@@ -20,12 +39,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "WeatherSummary"
-}
-</script>
-
 <style lang="scss" scoped>
 @import "/src/assets/styles/main.scss";
 
@@ -36,7 +49,7 @@ export default {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: contain;
-  background-image: url('/src/assets/img/weather-main/thunderstorm.png')
+  //background-image: url('/src/assets/img/weather-main/thunderstorm.png')
 }
 
 .city {

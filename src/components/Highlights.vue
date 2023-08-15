@@ -153,12 +153,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Highlights"
-}
-</script>
-
 <style lang="scss" scoped>
 @import "/src/assets/styles/main.scss";
 
