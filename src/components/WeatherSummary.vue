@@ -11,15 +11,20 @@ const props = defineProps({
 
 const xxx = computed(() => {
   // return props.weatherInfo?.weather[0].description
-  return 'url(' + `'/src/assets/img/weather-main/` + `${props.weatherInfo?.weather[0].description}.png'` + ')'
+  // return 'url(' + `'/src/assets/img/weather-main/` + `${props.weatherInfo?.weather[0].description}.png'` + ')'
+  return {
+    backgroundImage: `url('/src/assets/img/weather-main/${props.weatherInfo?.weather[0].description}.png')`
+    // backgroundImage: `url('/src/assets/img/cloud.png')` // не работает
+  }
 });
 
 </script>
 
 <template>
   <div v-if="weatherInfo?.weather" class="summary">
+    <!--    :style="{backgroundImage: xxx}"-->
     <div
-      :style="{backgroundImage: xxx}"
+      :style="xxx"
       class="pic-main"
     ></div>
     <div class="weather">
