@@ -11,20 +11,22 @@ const props = defineProps({
 
 const xxx = computed(() => {
   // return props.weatherInfo?.weather[0].description
-  // return 'url(' + `'/src/assets/img/weather-main/` + `${props.weatherInfo?.weather[0].description}.png'` + ')'
-  return {
-    backgroundImage: `url('/src/assets/img/weather-main/${props.weatherInfo?.weather[0].description}.png')`
-    // backgroundImage: `url('/src/assets/img/cloud.png')` // не работает
-  }
+  // return 'url(' + '"' + `/src/assets/img/weather-main/` + `${props.weatherInfo?.weather[0].description}.png` + '"' +  ')'
+  // return 'url(' + '"' + `/src/assets/img/weather-main/` + 'snow.png' + '"' + ')'
+  // return {
+  // backgroundImage: `url('../assets/img/weather-main/${props.weatherInfo?.weather[0].description}.png')`
+  // backgroundImage: "url('" + `src/assets/img/weather-main/${props.weatherInfo?.weather[0].description}.png` + ")'"
+  // backgroundImage: `url('/src/assets/img/cloud.png')` // не работает
+  // }
 });
 
 </script>
-
+<!--&quot;-->
 <template>
   <div v-if="weatherInfo?.weather" class="summary">
-    <!--    :style="{backgroundImage: xxx}"-->
+    <pre></pre>
     <div
-      :style="xxx"
+      :style="{backgroundImage: `url(\\/src/assets/snow.png\\)`}"
       class="pic-main"
     ></div>
     <div class="weather">
@@ -94,7 +96,7 @@ const xxx = computed(() => {
 
 .weather-desc {
   &::before {
-    background-image: url('/src/assets/img/weather.svg')
+    background-image: url('../assets/img/weather.svg')
   }
 }
 
