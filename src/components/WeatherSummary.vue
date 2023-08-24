@@ -1,5 +1,6 @@
 <script setup>
 import {computed} from "vue";
+import {capitalizeFirstLetter} from "/src/utils";
 
 const props = defineProps({
   weatherInfo: {
@@ -8,6 +9,8 @@ const props = defineProps({
     required: true
   }
 })
+
+const today = new Date().toLocaleString('en-EN', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'})
 
 const xxx = computed(() => {
   // return props.weatherInfo?.weather[0].description
@@ -23,25 +26,25 @@ const xxx = computed(() => {
 </script>
 <!--&quot;-->
 <template>
-  <div v-if="weatherInfo?.weather" class="summary">
+  <div class="summary">
     <pre></pre>
     <div
-      :style="{backgroundImage: `url(\\/src/assets/snow.png\\)`}"
+      :style="{backgroundImage: `url('/src/assets/img/weather-main/snow.png')`}"
       class="pic-main"
     ></div>
     <div class="weather">
       <div class="temp">
-        14 °C
+        {{ Math.round(weatherInfo?.main?.temp) }} °C
       </div>
       <div class="weather-desc text-block">
-        Thunderstorm
+        {{ capitalizeFirstLetter(weatherInfo?.weather[0].description) }}
       </div>
     </div>
     <div class="city text-block">
-      Paris, FR
+      {{ weatherInfo?.name }}, {{ weatherInfo?.sys?.country }}
     </div>
     <div class="date text-block">
-      Thu, March 16, 2023
+      {{ today }}
     </div>
   </div>
 </template>
@@ -65,7 +68,7 @@ const xxx = computed(() => {
 
 .weather {
   margin: 0 0 20px;
-  padding: 20px 0;
+  padding: 20px 0 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
