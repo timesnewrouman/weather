@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b466f1ed-4bbc-4808-a689-2f86bf0e403a" name="Changes" comment="" />
+    <list default="true" id="b466f1ed-4bbc-4808-a689-2f86bf0e403a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +59,7 @@
       <workItem from="1692886080357" duration="662000" />
       <workItem from="1692888005933" duration="653000" />
       <workItem from="1693210525263" duration="7632000" />
-      <workItem from="1694683904324" duration="698000" />
+      <workItem from="1694683904324" duration="2061000" />
     </task>
     <task id="LOCAL-00001" summary="build-test">
       <created>1692888222831</created>
@@ -150,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694683976899</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="build &quot;/weather&quot; 14-09-23">
+      <created>1694688101812</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1694688101812</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +184,7 @@
     <MESSAGE value="build &quot;/weather&quot;-2 test" />
     <MESSAGE value="build &quot;/weather&quot; test" />
     <MESSAGE value="build &quot;/weather&quot; test 14-09-23" />
-    <option name="LAST_COMMIT_MESSAGE" value="build &quot;/weather&quot; test 14-09-23" />
+    <MESSAGE value="build &quot;/weather&quot; 14-09-23" />
+    <option name="LAST_COMMIT_MESSAGE" value="build &quot;/weather&quot; 14-09-23" />
   </component>
 </project>
