@@ -177,11 +177,11 @@ const timezone = computed(() => props.weatherInfo?.timezone)
 </script>
 
 <style lang="scss" scoped>
-@import "/src/assets/styles/main.scss";
+@import "@/assets/styles/main.scss";
 
 .highlights {
   padding: 28px 16px 16px;
-  background: url('/src/assets/img/gradient-4.jpg') no-repeat 0 0;
+  background: url('@/assets/img/gradient-4.jpg') no-repeat 0 0;
   background-size: cover;
   border-radius: 25px;
 
@@ -211,7 +211,7 @@ const timezone = computed(() => props.weatherInfo?.timezone)
 .card {
   min-height: 230px;
   padding: 16px;
-  background: url('/src/assets/img/gradient-2.jpg') no-repeat 50% 50%;
+  background: url('@/assets/img/gradient-2.jpg') no-repeat 50% 50%;
   background-size: cover;
   border-radius: 8px;
 
@@ -247,18 +247,18 @@ const timezone = computed(() => props.weatherInfo?.timezone)
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: contain;
-  }
 
-  &--wind {
-    background-image: url('/src/assets/img/equalizer (2).png')
-  }
+    &--wind {
+      background-image: url('@/assets/img/equalizer (2).png')
+    }
 
-  &--pressure {
-    background-image: url('/src/assets/img/barometer.png')
-  }
+    &--pressure {
+      background-image: url('@/assets/img/barometer.png')
+    }
 
-  &--sun {
-    background-image: url('/src/assets/img/sun-moving.png')
+    &--sun {
+      background-image: url('@/assets/img/sun-moving.png')
+    }
   }
 }
 
@@ -282,7 +282,7 @@ const timezone = computed(() => props.weatherInfo?.timezone)
     width: 20px;
     height: 20px;
     margin-bottom: 6px;
-    background: url('/src/assets/img/sun.svg') no-repeat 50% 50%;
+    background: url('@/assets/img/sun.svg') no-repeat 50% 50%;
     background-size: cover;
 
     &--flipped {
@@ -339,7 +339,7 @@ const timezone = computed(() => props.weatherInfo?.timezone)
 .card-small {
   margin-top: 12px;
   padding: 12px 16px;
-  background: url('/src/assets/img/gradient-2.jpg') no-repeat 50% 50%;
+  background: url('@/assets/img/gradient-2.jpg') no-repeat 50% 50%;
   background-size: cover;
   border-radius: 8px;
 
@@ -376,15 +376,15 @@ const timezone = computed(() => props.weatherInfo?.timezone)
     }
 
     &--wind {
-      background-image: url('/src/assets/img/gusts.svg');
+      background-image: url('@/assets/img/gusts.svg');
     }
 
     &--pressure {
-      background-image: url('/src/assets/img/humidity.svg');
+      background-image: url('@/assets/img/humidity.svg');
     }
 
     &--sun {
-      background-image: url('/src/assets/img/cloud.svg');
+      background-image: url('@/assets/img/cloud.svg');
     }
   }
 

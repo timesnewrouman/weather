@@ -58,7 +58,7 @@ onMounted(getWeather);
 </script>
 
 <style lang="scss" scoped>
-@import "/src/assets/styles/main";
+@import "@/assets/styles/main";
 
 .page {
   position: relative;
@@ -125,7 +125,7 @@ onMounted(getWeather);
     right: 10px;
     width: 25px;
     height: 25px;
-    background: url('/src/assets/img/search.svg') no-repeat 50% 50%;
+    background: url('@/assets/img/search.svg') no-repeat 50% 50%;
     background-size: contain;
     transform: translateY(50%);
     cursor: pointer;
@@ -135,7 +135,7 @@ onMounted(getWeather);
 .info {
   height: 100%;
   padding: 16px;
-  background: url('/src/assets/img/gradient-1.jpg') no-repeat 50% 50%;
+  background: url('@/assets/img/gradient-1.jpg') no-repeat 50% 50%;
   background-size: cover;
   border-radius: 25px;
 }

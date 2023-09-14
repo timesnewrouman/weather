@@ -1,33 +1,15 @@
-import {fileURLToPath, URL} from 'node:url';
 import {defineConfig} from "vite";
 import vue from '@vitejs/plugin-vue';
-
-const initOptions = {
-  url: "https://timesnewrouman.github.io/weather/",
-};
-
-// TODO частично загружается только с хардкодом /weather/img/... путей прямо в сборку
+import path from "path";
 
 export default defineConfig({
-  base: '', // отвечает за адрес сборки, например http://127.0.0.1:4173/weather
-  build: {
-    base: '/weather2/',
-  },
+  base: '/weather/', // отвечает за адрес сборки, например http://127.0.0.1:4173/weather
   plugins: [vue()],
-  server: {
-    proxy: {
-      "/": {
-        target: initOptions.url,
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/auth/, ''),
-      },
-    },
-    cors: false,
-    port: 4091,
-  },
   resolve: {
+    extensions: ['.js', '.ts', '.vue', '.json', '.sass'],
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, "src"),
     }
   },
 })

@@ -1,6 +1,6 @@
 <script setup>
 import {computed} from "vue";
-import {capitalizeFirstLetter} from "/src/utils";
+import {capitalizeFirstLetter} from "@/utils";
 
 const props = defineProps({
   weatherInfo: {
@@ -12,15 +12,8 @@ const props = defineProps({
 
 const today = new Date().toLocaleString('en-EN', {weekday: 'short', year: 'numeric', month: 'long', day: 'numeric'})
 
-const xxx = computed(() => {
-  // return props.weatherInfo?.weather[0].description
-  // return 'url(' + '"' + `/src/assets/img/weather-main/` + `${props.weatherInfo?.weather[0].description}.png` + '"' +  ')'
-  // return 'url(' + '"' + `/src/assets/img/weather-main/` + 'snow.png' + '"' + ')'
-  // return {
-  // backgroundImage: `url('../assets/img/weather-main/${props.weatherInfo?.weather[0].description}.png')`
-  // backgroundImage: "url('" + `src/assets/img/weather-main/${props.weatherInfo?.weather[0].description}.png` + ")'"
-  // backgroundImage: `url('/src/assets/img/cloud.png')` // не работает
-  // }
+const backgroundImage = computed(() => {
+  return 'url(' + `"/weather/weather-main/${props.weatherInfo?.weather[0].description}.png"` + ')'
 });
 
 </script>
@@ -28,8 +21,9 @@ const xxx = computed(() => {
 <template>
   <div class="summary">
     <pre></pre>
+    <!--    :style="{backgroundImage: `url('/src/assets/img/sun.svg')`}"-->
     <div
-      :style="{backgroundImage: `url('/src/assets/img/weather-main/snow.png')`}"
+      :style="{backgroundImage: backgroundImage}"
       class="pic-main"
     ></div>
     <div class="weather">
@@ -50,7 +44,7 @@ const xxx = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-@import "/src/assets/styles/main.scss";
+@import "@/assets/styles/main.scss";
 
 .pic-main {
   width: 60px;
@@ -59,7 +53,6 @@ const xxx = computed(() => {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: contain;
-  //background-image: url('/src/assets/img/weather-main/thunderstorm.png')
 }
 
 .city {
@@ -99,13 +92,13 @@ const xxx = computed(() => {
 
 .weather-desc {
   &::before {
-    background-image: url('../assets/img/weather.svg')
+    background-image: url('@/assets/img/weather.svg')
   }
 }
 
 .city {
   &::before {
-    background-image: url('/src/assets/img/location.svg')
+    background-image: url('@/assets/img/location.svg')
   }
 }
 
@@ -114,7 +107,7 @@ const xxx = computed(() => {
     left: 2px;
     width: 15px;
     height: 15px;
-    background-image: url('/src/assets/img/calendar.svg');
+    background-image: url('@/assets/img/calendar.svg');
   }
 }
 
