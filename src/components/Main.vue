@@ -42,9 +42,11 @@ import Coords from "@/components/Coords";
 import Humidity from "@/components/Humidity";
 import {BASE_URL, API_KEY} from "@/constants/constants";
 import {capitalizeFirstLetter} from "@/utils";
+import {useStore} from "@/store";
 
 const city = ref('London');
 const weatherInfo = ref(null);
+const store = useStore()
 
 const isError = computed(() => weatherInfo?.value?.cod !== 200);
 
