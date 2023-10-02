@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "markup": "vue-tsc --noEmit",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly`",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -12,8 +13,10 @@
     "core-js": "^3.8.3",
     "typescript": "^5.2.2",
     "vite": "^4.4.5",
+    "vite-plugin-checker": "^0.6.2",
     "vue": "^3.3.4",
     "vue-router": "^4.0.3",
+    "vue-tsc": "^1.8.15",
     "vuex": "^4.1.0"
   },
   "devDependencies": {
