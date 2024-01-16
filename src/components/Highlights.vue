@@ -153,7 +153,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import {computed} from "vue";
 import {getPressureMm, getTime} from "@/utils";
 

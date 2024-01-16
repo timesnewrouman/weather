@@ -34,7 +34,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import {ref, onMounted, computed} from 'vue';
 import WeatherSummary from "@/components/WeatherSummary";
 import Highlights from "@/components/Highlights";
